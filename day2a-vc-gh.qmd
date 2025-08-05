@@ -5,13 +5,15 @@ editor: visual
 ---
 
 ```{r}
-pacman::p_load("ARTofR", "palmerpenguins", "tidyverse", ggthemes)
+pacman::p_load("ARTofR", "palmerpenguins", "tidyverse", "ggthemes")
 ```
 
 ```{r}
 xxx_title0("Lets Go Palmer")
 ```
+
 #Making a graph
+
 ```{r}
 ggplot(penguins, aes(x= body_mass_g, y= flipper_length_mm))+
   geom_point(aes(color=species))+
@@ -26,4 +28,3 @@ ggplot(penguins, aes(x= body_mass_g, y= flipper_length_mm))+
   theme_minimal()
   
 ```
-
