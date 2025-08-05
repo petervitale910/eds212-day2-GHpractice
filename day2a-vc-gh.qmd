@@ -25,6 +25,6 @@ ggplot(penguins, aes(x= body_mass_g, y= flipper_length_mm))+
        caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER",
        legend= "Species")+
   facet_wrap(~island)+
-  theme_minimal()
+  theme_clean()
   
 ```
