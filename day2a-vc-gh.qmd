@@ -3,3 +3,11 @@ title: "day2a-vc-gh"
 format: html
 editor: visual
 ---
+
+```{r}
+pacman::p_load("ARTofR")
+```
+
+```{r}
+xxx_title0("Lets Go Gamers")
+```
