@@ -5,9 +5,25 @@ editor: visual
 ---
 
 ```{r}
-pacman::p_load("ARTofR")
+pacman::p_load("ARTofR", "palmerpenguins", "tidyverse", ggthemes)
 ```
 
 ```{r}
-xxx_title0("Lets Go Gamers")
+xxx_title0("Lets Go Palmer")
 ```
+#Making a graph
+```{r}
+ggplot(penguins, aes(x= body_mass_g, y= flipper_length_mm))+
+  geom_point(aes(color=species))+
+  scale_color_manual(values = c("purple", "darkorange", "forestgreen"))+
+  labs(x= "Body Mass (G)",
+       y= "Flipper Length (mm)",
+       title = "Palmers Penguin Graph", 
+       subtitle = "Palmer Archipeligo (2007-2009", 
+       caption = "Collected by Dr. Kristen Gorman and colleagues at Palmer Station LTER",
+       legend= "Species")+
+  facet_wrap(~island)+
+  theme_minimal()
+  
+```
+
