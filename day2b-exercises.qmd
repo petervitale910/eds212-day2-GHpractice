@@ -1,0 +1,75 @@
+---
+title: "day2b-exercises"
+format: html
+editor: visual
+---
+
+```{r}
+pacman::p_load("tidyverse", "ARTofR")
+```
+
+
+```{r}
+eq1 = function (x){
+  3*x^2+4
+}
+
+#Creating Data frame 
+data_range= data.frame(x = c(1,100))
+
+#Now plot
+ggplot(data_range, aes(x= x))+
+  geom_function(fun=eq1)
+```
+
+#### Plotting Derivatives 
+
+#Function ct= t^3
+
+```{r}
+ct = function (t) {
+t^3
+}
+
+# lets create another data range
+dat_rg = data.frame(t= c(-5,5))
+
+ggplot(dat_rg, aes (x=t))+
+  geom_function(fun=ct)
+```
+
+now lets find the derivative 
+
+```{r}
+dc_dt = D(expr = expression ( t^3), name= "t")
+
+dc_dt 
+
+#ok now lets store it as a function 
+
+dc_dt_fun = function(t){
+  3*t^2
+}
+
+ggplot(dat_rg, aes(x=t))+
+  geom_function(fun=(ct), color="red")+
+  geom_function(fun = dc_dt_fun, color="blue")
+```
+
+#### Partial Derivatives
+
+```{r}
+#F(x,y,z)=2xy-3*x^2*z^3
+
+f_xyz= expression(2*x*y-3*x^2*z^3)
+
+#Partial with respect to x
+
+df_dx=D(f_xyz,"x")
+
+df_dx
+
+#Looks good
+
+```
+
